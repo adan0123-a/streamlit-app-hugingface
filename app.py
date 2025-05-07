@@ -14,7 +14,7 @@ if task == "Text Generation":
     prompt = st.text_area("Enter a prompt", "Once upon a time in a land far away,")
     if st.button("Generate Text"):
         with st.spinner("Generating..."):
-            generator = pipeline("text-generation", model="openai-community/gpt2")
+            generator = pipeline("text-generation", model="gpt2")
             output = generator(prompt, max_length=100, num_return_sequences=1)
             st.success("Generated Text:")
             st.write(output[0]['generated_text'])
